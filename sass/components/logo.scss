@@ -1,0 +1,15 @@
+// Logo
+// —————————————————————————————————
+
+.c-logo {
+  background-image: url(#{$img-path}logo.svg);
+  background-size: cover;
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 49px;
+  width: 51px;
+
+  //== Variants
+  &.c-logo--header { margin-right: ($gutter * 2) }
+  &.c-logo--auth { margin-bottom: ($gutter * 8) }
+}

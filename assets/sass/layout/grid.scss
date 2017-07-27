@@ -1,0 +1,115 @@
+// Grid
+// —————————————————————————————————
+
+
+.l-grid__wrapper {
+  display: flex;
+  flex: 1 1 auto;
+}
+.l-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+.l-grid__item {
+  background-color: #fff;
+  border-radius: $border-radius;
+  border: 2px solid $grey;
+  cursor: pointer;
+  flex: 0 0 calc((100% - (#{$gutter} * 18)) / 6);
+  margin-right: ($gutter * 3);
+  margin-bottom: ($gutter * 2.5);
+  position: relative;
+  text-align: center;
+  transition: all 300ms ease-out;
+
+  //== States
+  &:hover {
+    border-color: $green;
+    box-shadow: 0 5px 0 rgba($black, 0.04);
+    transform: translate3d(0, -10px, 0);
+  }
+}
+.l-grid__spacer {
+  display: block;
+  opacity: 0;
+  width: 100%;
+}
+.l-grid__content {
+  @include coverer();
+}
+.l-grid__number {
+  //== Children
+  div {
+    display: flex;
+    @include coverer();
+  }
+  span {
+    background-image: url(#{$img-path}icons/icon--coin.png);
+    background-position: right 2px;
+    background-repeat: no-repeat;
+    background-size: 28px;
+    color: $grey--dark;
+    margin: auto;
+    padding-right: ($gutter + 28px);
+    position: relative;
+    top: 8px;
+    @include font-pixel(50px);
+  }
+
+  //== States
+  &:hover span { color: $green }
+}
+.l-grid__people {
+  //== Children
+  .l-grid__content div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  span {
+    flex: 1 1 auto;
+    overflow: hidden;
+    position: relative;
+  }
+  .l-grid__content img {
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    @include centerer();
+  }
+  p {
+    color: $grey--darker;
+    flex: 0 0 auto;
+    padding: $gutter 0;
+    text-transform: uppercase;
+    @include font(12px, 600);
+  }
+
+  //== States
+  &:hover p { color: $black }
+}
+.l-grid__app {
+  padding: 0 0 $gutter;
+
+  //== Children
+  img {
+    border-radius: 1px;
+    margin: 4px 4px $gutter;
+    width: calc(100% - 8px);
+  }
+  strong {
+    color: $black;
+    display: block;
+    text-transform: uppercase;
+    @include font(12px, 600);
+  }
+  small {
+    color: $grey--dark;
+    display: block;
+    text-transform: uppercase;
+    @include font(12px, 600);
+  }
+}

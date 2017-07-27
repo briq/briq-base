@@ -1,0 +1,38 @@
+// Popovers
+// —————————————————————————————————
+
+
+.c-popover {
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 0 0 rgba($black, 0.1),
+              0 0 0 2px rgba($black, 0.1);
+  position: absolute;
+  z-index: $zindex-ultra;
+  display: none;
+
+  &.open {
+    display: block;
+  }
+}
+.c-popover--menu {
+  padding: 4px;
+  top: $header--height - 25px;
+  left: 0;
+  right: 0;
+
+  //== Children
+  a {
+    border-radius: $border-radius;
+    color: $grey--darker;
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 $gutter;
+    @include font(13px, 600);
+  }
+  a:hover {
+    background-color: rgba($grey, 0.3);
+    color: $black;
+  }
+}

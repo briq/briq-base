@@ -1,0 +1,37 @@
+// Sort
+// —————————————————————————————————
+
+
+.l-sort {
+  //== Children
+  .l-wrap {
+    align-items: center;
+    display: flex;
+  }
+  .c-btn { margin-left: ($gutter * 1.5) }
+}
+.l-sort__toggle {
+  display: flex;
+  flex: 1 1 auto;
+
+  //== Children
+  a {
+    border-radius: $border-radius;
+    color: $sort-toggle--clr;
+    display: block;
+    height: $form-element--height;
+    line-height: $form-element--height;
+    margin-right: ($gutter * 1.5);
+    padding: 0 ($gutter * 1.5);
+    @include font(13px, 600);
+  }
+  a:hover { background-color: $sort-toggle--bkg--hover }
+  a.active {
+    background-color: $sort-toggle--bkg--active;
+    color: $sort-toggle--clr--active;
+  }
+}
+.l-sort__search {
+  flex: 0 0 200px;
+  margin-left: ($gutter * 1.5);
+}

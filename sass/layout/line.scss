@@ -1,0 +1,235 @@
+// Line
+// —————————————————————————————————
+
+
+.l-lines { margin-bottom: $gutter }
+.l-line {
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: inset 0 0 0 2px $line--bdr;
+  align-items: center;
+  display: flex;
+  margin-bottom: $gutter;
+  min-height: 75px;
+  position: relative;
+
+  //== Variants
+  &.l-line--transaction { padding-left: ($line-transaction-avatar--size * 3) + ($gutter * 6) }
+  &.l-line-title {
+    border-radius: $border-radius $border-radius 0 0;
+    display: flex;
+    min-height: $line-title--height;
+    padding: ($gutter * 1.5);
+
+    //== Children
+    h2 {
+      color: $black;
+      position: relative;
+      top: 3px;
+      @include font-pixel(20px);
+    }
+  }
+  .l-lines & { margin-bottom: -2px }
+  &.l-line--form,
+  &.l-line--actions {
+    min-height: 0;
+    padding: ($gutter * 1.5);
+  }
+  &.l-line--actions {
+    display: flex;
+    justify-content: flex-end;
+    .c-btn {
+      margin-left: ($gutter * 1.5);
+      &:first-child { margin-left: 0; }
+    }
+  }
+}
+
+
+.l-line__details {
+  flex: 1 1 auto;
+  padding: ($gutter * 1.5);
+
+  //== Children
+  small {
+    color: $grey--darker;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    @include font(10px, 600);
+  }
+  h3 {
+    color: $black;
+    line-height: 1.4em;
+    @include font(15px, 600);
+  }
+  p {
+    color: $grey--darker;
+    text-transform: uppercase;
+    @include font(10px, 600);
+  }
+  p strong {
+    color: $black;
+    text-transform: none;
+    @include font(15px, 600);
+  }
+  p + p {
+    margin-top: 5px;
+  }
+}
+
+.l-line__inline-count {
+  color: $grey--darker;
+  margin-top: 5px;
+  @include font-pixel(18px);
+
+  //== Children
+  span {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    @include avatar(15px, 0);
+    position: relative;
+    top: -1px;
+  }
+
+  //== Variants
+  &.l-line__inline-count--received {
+    span { background-image: url(#{$img-path}icons/icon--coin-received.svg) }
+  }
+  &.l-line__inline-count--give {
+    span { background-image: url(#{$img-path}icons/icon--coin-give.svg) }
+  }
+
+  & + .l-line__inline-count {
+    margin-left: ($gutter * 1.5);
+  }
+}
+
+
+.l-line__actions {
+  display: flex;
+  flex: 0 0 auto;
+  padding: 0 ($gutter * 1.5);
+  align-items: center;
+
+  //== Children
+  .c-btn {
+    margin-left: ($gutter * 1.5);
+    &:first-child { margin-left: 0; }
+  }
+
+  .c-form__element {
+    margin-left: ($gutter * 1.5);
+  }
+
+  //== Variants
+  .l-line-title & { padding-right: 0 }
+}
+
+.l-line__avatar-container {
+  margin: ($gutter * 1.5) 0 ($gutter * 1.5) ($gutter * 1.5);
+  position: relative;
+
+  .l-line__avatar {
+    display: block;
+    background: $grey--light;
+  }
+
+  .l-line__avatar-badge {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    @include avatar(20px, $border-radius);
+  }
+}
+
+
+.l-line__avatar {
+  @include avatar($line-transaction-avatar--size, $border-radius);
+
+  //== Variants
+  .l-line > & { margin: ($gutter * 1.5) 0 ($gutter * 1.5) ($gutter * 1.5) }
+}
+
+.l-line__transaction {
+  align-items: center;
+  border-radius: $border-radius 0 0 $border-radius;
+  bottom: 0;
+  display: flex;
+  flex: 0 0 auto;
+  left: 0;
+  padding: ($gutter * 1.5);
+  position: absolute;
+  top: 0;
+
+  //== Variants
+  &.l-line__transaction--pos { background-color: $line-transaction--bkg--pos }
+  &.l-line__transaction--neg { background-color: $line-transaction--bkg--neg }
+}
+.l-line__count {
+  color: #fff;
+  line-height: ($line-transaction-avatar--size + 6px);
+  margin: 0 ($gutter * 1.5);
+  text-align: center;
+  position: relative;
+  @include avatar($line-transaction-avatar--size, $border-radius);
+  @include font-pixel(22px);
+
+  //== Variants
+  .l-line__transaction--pos & {
+    text-shadow: 0 2px 0 darken($line-transaction-count--bkg--pos, 10%);
+    background-color: $line-transaction-count--bkg--pos;
+  }
+  .l-line__transaction--neg & {
+    text-shadow: 0 2px 0 darken($line-transaction-count--bkg--neg, 10%);
+    background-color: $line-transaction-count--bkg--neg;
+  }
+
+  &:after {
+    content:"";
+    border: solid 10px transparent;
+    border-radius: $border-radius;
+    border-top-color: rgba(0,0,0,0.2);
+    position: absolute;
+    right: -7px;
+  }
+
+  .l-line__transaction--pos &:after {
+    top: -7px;
+    transform: rotate(-135deg);
+  }
+
+  .l-line__transaction--neg &:after {
+    bottom: -7px;
+    transform: rotate(-45deg);
+  }
+}
+
+.l-line__form {
+  display: none;
+  flex: 1 1 auto;
+}
+
+.l-line--editing {
+  & > .l-line__details,
+  & > .l-line__actions { display: none }
+  .l-line__form {
+    display: flex;
+  }
+}
+
+.l-lines--2cols {
+  display: flex;
+  flex-wrap: wrap;
+
+  .l-line__wrapper {
+    position: relative;
+    flex: 50% 0 0;
+    margin-bottom: $gutter*2;
+
+    &:nth-child(odd){
+      padding-right: $gutter*2;
+    }
+  }
+}

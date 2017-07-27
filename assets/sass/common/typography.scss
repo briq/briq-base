@@ -1,0 +1,32 @@
+// Typography
+// —————————————————————————————————
+
+
+//== Font-face
+$font-path: "../fonts/";
+
+@font-face {
+  font-family: 'Chronotype';
+  src: url(#{$font-path}chronotype.woff2) format('woff2'),
+       url(#{$font-path}chronotype.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//== Mixins usage
+@mixin font($size, $weight: normal){
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+}
+@mixin font-pixel($size: $fs-base, $tt: uppercase){
+  font-family: 'Chronotype';
+  font-size: $size;
+  font-weight: normal;
+  text-transform: $tt;
+}
+
+
+//== Basic
+body { @include font(14px) }
+a { cursor: pointer }

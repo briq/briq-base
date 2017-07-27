@@ -1,0 +1,23 @@
+
+
+.c-tag {
+  background-color: $tag--bkg;
+  border-radius: $border-radius;
+  color: #fff;
+  display: inline-block;
+  height: $tag--height;
+  line-height: $tag--height;
+  padding: 0 ($gutter / 2);
+  @include font(10px, 600);
+
+  //== Variants
+  &.c-tag--pos { background-color: $tag--bkg--pos }
+  &.c-tag--neg { background-color: $tag--bkg--neg }
+  &.c-tag--info { background-color: darken($header--bkg, 20%) }
+  &.c-tag--number {
+    line-height: $tag--height + 3px;
+    text-align: center;
+    @include avatar($tag--height, $border-radius);
+    @include font-pixel(18px);
+  }
+}

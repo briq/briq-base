@@ -1,0 +1,44 @@
+// Icon
+// —————————————————————————————————
+
+
+.c-icon {
+  background-color: $icon--bkg;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: inline-block;
+  line-height: $icon--size;
+  text-align: center;
+  @include avatar($icon--size, $border-radius);
+
+  //== Variants
+  &.c-icon--pos { background-color: $icon--bkg--pos }
+  &.c-icon--neg { background-color: $icon--bkg--neg }
+  &.c-icon--slack {
+    background-color: transparent;
+    background-image: url(#{$img-path}icons/icon--slack.svg);
+    margin-right: 2px;
+  }
+}
+
+//== Icons list
+$icons-list:  icon--briq,
+              icon--onboard,
+              icon--pause,
+              icon--play,
+              icon--delete,
+              icon--link,
+              icon--revert,
+              icon--save,
+              icon--cancel,
+              icon--edit,
+              icon--plus,
+              icon--settings,
+              icon--select;
+
+@each $current-icon in $icons-list {
+  .c-#{$current-icon} {
+    background-image: url(#{$img-path}icons/btns/#{$current-icon}.svg);
+  }
+}

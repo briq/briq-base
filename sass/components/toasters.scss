@@ -1,0 +1,42 @@
+// Toasters
+// —————————————————————————————————
+
+.c-toaster {
+  bottom: $gutter * 2;
+  left: $gutter * 2;
+  position: fixed;
+  z-index: $zindex-ultra;
+}
+
+.c-toaster__item {
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  border-radius: $border-radius*2;
+  box-shadow: inset 0 0 0 2px $btn--bdr,
+              0 5px 0 rgba($black, 0.04);
+  color: $black;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.2;
+  margin-bottom: $gutter;
+  padding: $gutter;
+  width: 300px;
+  @include font(13px, 600);
+
+  .c-icon {
+    flex: 0 0 $icon--size;
+    margin-right: $gutter * 1.5;
+  }
+
+  .c-close {
+    color: $grey--darker;
+    cursor: pointer;
+  }
+}
+
+.c-toaster__text {
+  flex: 1 1 auto;
+  text-align: left;
+  margin-right: $gutter;
+}
