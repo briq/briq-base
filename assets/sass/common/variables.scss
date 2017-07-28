@@ -1,0 +1,83 @@
+// Variables
+// —————————————————————————————————
+
+//== Base
+$gutter: 10px;
+$border-radius: 2px;
+$img-path: "/img/";
+
+
+//== Z-indexes
+$zindex-ultra: 10;
+$zindex-mega: 9;
+$zindex-huge: 4;
+$zindex-large: 3;
+$zindex-medium: 2;
+$zindex-small: 1;
+$zindex-null: 0;
+
+
+//== Colors
+$black: #565655;
+$grey--darker: #A1A0A0;
+$grey--dark: #CECCC8;
+$grey: #E0DEDB;
+$grey--light: #EDECEA;
+$grey--lighter: #FAF9F8;
+
+$green: #5CB985;
+$orange: #FFA988;
+$yellow: #FFCC66;
+
+//== Global variables
+$body-bkg: $grey--lighter;
+
+$header--bkg: $brand;
+$header--height: 70px;
+$header--bkg--give: $brand;
+
+$form-element--bdr: $grey;
+$form-element--bdr--hover: $grey--dark;
+$form-element--bdr--focus: $grey--darker;
+$form-element--height: 40px;
+$form-element--height--textarea: 100px;
+
+$btn--bdr: $form-element--bdr;
+$btn--bdr--hover: $form-element--bdr--hover;
+$btn--height: $form-element--height;
+
+$sort-toggle--bkg--hover: rgba($grey, 0.5);
+$sort-toggle--bkg--active: $grey--dark;
+$sort-toggle--clr: $grey--darker;
+$sort-toggle--clr--active: $black;
+
+$icon--size: 26px;
+$icon--size--slack: 18px;
+$icon--bkg: $grey;
+$icon--bkg--pos: $green;
+$icon--bkg--neg: $orange;
+
+$line--bdr: $grey--light;
+$line-title--height: 44px;
+$line-transaction-avatar--size: 60px;
+$line-transaction--bkg--pos: rgba($green, 0.5);
+$line-transaction--bkg--neg: rgba($orange, 0.5);
+$line-transaction-count--bkg--pos: $green;
+$line-transaction-count--bkg--neg: $orange;
+
+$tag--bkg: $grey;
+$tag--bkg--pos: $green;
+$tag--bkg--neg: $orange;
+$tag--height: 20px;
+
+$auth--bkg: $brand;
+$auth--bkg--pic: rgba(#fff, 0.4);
+$auth-txt--clr: darken($brand, 40%);
+
+$tooltip--bkg: rgba($black, 0.96);
+
+$modal--overlay: rgba($black, 0.5);
+$modal--bdr: $grey;
+$modal-title--clr: $black;
+$modal-txt--clr: $grey--darker;
+

@@ -1,0 +1,25 @@
+.c-tooltip {
+  cursor: help;
+  position: relative;
+
+  //== Children
+  &:after {
+    background-color: $tooltip--bkg;
+    border-radius: $border-radius;
+    top: 10px;
+    color: #fff;
+    content: attr(data-tooltip);
+    left: 50%;
+    opacity: 0;
+    padding: 2px 4px 3px;
+    position: absolute;
+    text-align: center;
+    transform: translate3d(-50%, 0, 0);
+    transition: all 200ms ease-out;
+    width: 120px;
+  }
+  &:hover:after {
+    top: 15px;
+    opacity: 1;
+  }
+}

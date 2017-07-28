@@ -1,0 +1,9 @@
+{
+  "name": "briq-base",
+  "description": "Base for briq applications",
+  "version": "0.0.1",
+  "license": "MIT",
+  "peerDependencies": {
+    "node-sass": "4.5.x"
+  }
+}
