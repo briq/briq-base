@@ -1,6 +1,6 @@
 $(function() {
   function getSignedRequest(file, cb) {
-    var url = '/s3/sign?fileType=' + encodeURIComponent(file.type);
+    var url = window.S3_SIGN_URL || '/s3/sign?fileType=' + encodeURIComponent(file.type);
     $.get(url, { dataType: 'json' })
       .done(function(data) {
         cb(null, data);
