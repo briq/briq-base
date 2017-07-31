@@ -2,8 +2,10 @@
   "name": "briq-base",
   "description": "Base for briq applications",
   "version": "0.0.3",
+  "main": "index.js",
   "license": "MIT",
-  "peerDependencies": {
-    "node-sass": "4.5.x"
+  "dependencies": {
+    "@slack/client": "^3.10.0",
+    "lodash": "^4.17.4"
   }
 }
