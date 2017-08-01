@@ -20,6 +20,10 @@ body { background-color: $body-bkg }
   right: 0;
   top: $header--height;
   @include scrolling();
+
+  &.l-content--with-footer {
+    margin-bottom: 70px;
+  }
 }
 
 
