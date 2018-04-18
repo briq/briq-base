@@ -14,123 +14,75 @@
     height: 100%;
   }
 }
-.l-header__nav {
-  display: flex;
-  flex: 1 1 auto;
 
-  //== Children
-  a {
-    border-radius: $border-radius;
-    color: #fff;
-    display: block;
-    height: ($header--height - ($gutter * 3));
-    line-height: ($header--height - ($gutter * 3)) + 6px;
-    margin-right: ($gutter * 1.5);
-    padding: 0 $gutter;
-    text-shadow: 0 2px 0 darken($header--bkg, 10%);
-    @include font-pixel(20px);
-  }
-  a:hover {
+.l-header__btn {
+  position: relative;
+  border-radius: $border-radius;
+  display: flex;
+
+  height: ($header--height - ($gutter * 3));
+  line-height: ($header--height - ($gutter * 3)) + 6px;
+
+  margin-right: ($gutter * 1.5);
+  padding: 0 $gutter;
+
+  @include font-pixel(20px);
+  color: #fff;
+  text-shadow: 0 2px 0 darken($header--bkg, 10%);
+
+  &:hover {
     background-color: darken($header--bkg, 10%);
     text-shadow: 0 2px 0 darken($header--bkg, 20%);
   }
-  a.active {
+
+  &.active {
     background-color: darken($header--bkg, 20%);
     text-shadow: 0 2px 0 darken($header--bkg, 25%);
   }
 }
-.l-header__user {
-  background-color: darken($header--bkg, 10%);
-  border-radius: $border-radius;
-  display: flex;
-  flex: 0 0 auto;
-  height: ($header--height - ($gutter * 3));
-  margin-left: ($gutter * 1.5);
-  position: relative;
 
-  //== Children
+.l-header__balance {
+  display: inline-block;
+  padding: 0 $gutter 0 $gutter * 4;
+  margin-left: $gutter;
+  border-radius: 0 $border-radius $border-radius 0;
+}
+
+.l-header__btn--user {
+  padding: 0;
+  margin-right: 0;
+  background-color: darken($header--bkg, 10%);
+
+  &:hover { background-color: darken($header--bkg, 15%) }
+
   img {
-    margin: 3px 0 3px 3px;
+    margin: 3px $gutter 3px 3px;
     @include avatar(34px, $border-radius);
   }
 
-  //== States
-  &:hover { background-color: darken($header--bkg, 15%) }
-}
-.l-header__dropdown {
-  align-items: center;
-  display: flex;
-
-  //== Children
-  & > a {
-    color: #fff;
-    display: flex;
-    height: 100%;
-    padding: 0 $gutter;
-    position: relative;
-    text-shadow: 0 2px 0 darken($header--bkg, 20%);
-    top: 1px;
-    @include font-pixel(20px);
-
-    //== Variants
-    .l-header__user:hover & { text-shadow: 0 2px 0 darken($header--bkg, 25%) }
-  }
-  & > a span { margin: auto }
-}
-.l-header__count {
-  align-items: center;
-  border-radius: 0 $border-radius $border-radius 0;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  height: 100%;
-  padding: 0 $gutter;
-  @include font-pixel(20px);
-
-  //== Children
-  span {
-    background-position: left center;
-    background-repeat: no-repeat;
-    height: 30px;
-    line-height: 35px;
-    padding-left: 19px + $gutter;
-  }
-
-  //== Variants
-  &.l-header__count--received {
-    background-color: darken($header--bkg, 20%);
-
-    //== Children
-    span { background-image: url(#{$img-path}icons/icon--coin-received.svg) }
-  }
-  &.l-header__count--give {
-    background-color: darken($header--bkg--give, 15%);
-
-    //== Children
-    span { background-image: url(#{$img-path}icons/icon--coin-give.svg) }
+  .l-header__balance {
+    background: darken($header--bkg, 20%) url(#{$img-path}icons/icon--coin-received.svg) $gutter center no-repeat;
   }
 }
-.l-header__give {
-  align-items: center;
+
+.l-header__btn--give {
+  padding-right: 0;
   background-color: $header--bkg--give;
-  border-radius: $border-radius;
-  cursor: pointer;
-  display: flex;
-  flex: 0 0 auto;
-  height: ($header--height - ($gutter * 3));
+  text-shadow: 0 2px 0 darken($header--bkg--give, 10%);
+  margin-right: 0;
   margin-left: ($gutter * 1.5);
 
-  //== Children
-  & > a {
-    color: #fff;
-    padding: 0 $gutter;
-    position: relative;
-    top: 1px;
-    text-shadow: 0 2px 0 darken($header--bkg--give, 10%);
-    @include font-pixel(20px);
+  &:hover { 
+    background-color: darken($header--bkg--give, 5%);
+    text-shadow: 0 2px 0 darken($header--bkg--give, 20%)
   }
-  &:hover > a { text-shadow: 0 2px 0 darken($header--bkg--give, 20%) }
 
-  //== Variants
-  &:hover { background-color: darken($header--bkg--give, 5%) }
+  .l-header__balance {
+    background: darken($header--bkg--give, 15%) url(#{$img-path}icons/icon--coin-give.svg) $gutter center no-repeat;
+  }
+}
+
+.l-header__nav {
+  display: flex;
+  flex: 1 1 auto;
 }
