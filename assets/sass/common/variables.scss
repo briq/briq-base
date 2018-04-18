@@ -22,12 +22,20 @@ $black: #565655;
 $grey--darker: #A1A0A0;
 $grey--dark: #CECCC8;
 $grey: #E0DEDB;
-$grey--light: #EDECEA;
-$grey--lighter: #FAF9F8;
+$grey--light: #F2EFEB;
+$grey--lighter: #FAF9F7;
+$white: #FFFFFF;
 
+$purple--dark: #52516E;
+
+$blue--light: #92D4E2;
+
+$red: #F64D56;
+$orange: #FF8161;
+$yellow: #FFCB45;
+$turquoise: #7BCBC2;
 $green: #5CB985;
-$orange: #FFA988;
-$yellow: #FFCC66;
+$brown: #977B5A;
 
 //== Global variables
 $body-bkg: $grey--lighter;
@@ -65,7 +73,7 @@ $line-transaction--bkg--neg: rgba($orange, 0.5);
 $line-transaction-count--bkg--pos: $green;
 $line-transaction-count--bkg--neg: $orange;
 
-$tag--bkg: $grey;
+$tag--bkg: $grey--dark;
 $tag--bkg--pos: $green;
 $tag--bkg--neg: $orange;
 $tag--height: 20px;
