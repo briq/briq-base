@@ -1,0 +1,32 @@
+.l-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-stat__number {
+  color: $black;
+  line-height: 1.1em;
+  @include font(40px, 600);
+}
+
+.l-stat__label {
+  color: $grey--darker;
+  @include font(14px, 600);
+  margin-top: $gutter/2;
+}
+
+.l-stat__growth {
+  background-image: url(#{$img-path}icons/icon--arrow-neg.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  color: $grey--darker;
+  margin-left: $gutter;
+  padding-left: 15px + 5px;
+  @include font(12px, 600);
+
+  //== Variants
+  &.l-stat__growth--pos { background-image: url(#{$img-path}icons/icon--arrow-pos.png) }
+}

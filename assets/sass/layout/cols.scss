@@ -1,0 +1,14 @@
+.l-cols, .l-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.l-col {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  
+  &.l-col--shrink {
+    flex-grow: 0;
+  }
+}
