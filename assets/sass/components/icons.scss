@@ -10,7 +10,7 @@
   display: inline-block;
   line-height: $icon--size;
   text-align: center;
-  @include avatar($icon--size, $border-radius);
+  @include avatar($icon--size, $border-radius/2);
 
   //== Variants
   &.c-icon--pos { background-color: $icon--bkg--pos }
@@ -35,6 +35,7 @@ $icons-list:  icon--briq,
               icon--edit,
               icon--plus,
               icon--settings,
+              icon--eye,
               icon--select;
 
 @each $current-icon in $icons-list {

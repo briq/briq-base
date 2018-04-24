@@ -4,47 +4,87 @@
 
 .c-btn {
   align-items: center;
-  background-color: $grey--lighter;
+  background-color: $white;
   border: none;
   border-radius: $border-radius;
-  box-shadow: inset 0 0 0 2px $btn--bdr,
-              inset 0 0 0 4px #fff;
-  color: $black;
+  box-shadow: inset 0 0 0 1px $btn--bdr;
+  color: $grey--darker;
   cursor: pointer;
   display: flex;
   height: $btn--height;
   line-height: $btn--height;
   outline: none;
-  padding: 0 ($gutter * 1.5);
+  padding: 0 ($gutter * 1.2);
   text-align: center;
-  @include font(13px, 600);
-
-
+  @include font(12px, 600);
+  
   //== Children
   p { color: $grey--darker }
   strong { color: $black }
   .c-icon {
-    margin-left: -7px;
+    margin-left: -8px;
     margin-right: $gutter;
   }
-
+  
   //== States
   &:hover {
-    box-shadow: inset 0 0 0 2px $btn--bdr--hover,
-              inset 0 0 0 4px #fff;
+    box-shadow: inset 0 0 0 1px $btn--bdr--hover;
   }
   &.c-btn--disabled {
     opacity: 0.6;
     pointer-events:none;
   }
-
+  
   //== Variants
-  &.c-btn--slack {
-    box-shadow: inset 0 0 0 4px #fff;
-    float: left;
-  }
   &.c-btn--dropdown .c-icon {
     margin-left: $gutter;
     margin-right: -7px;
+  }
+
+  &.c-btn--primary {
+    background-color: $turquoise;
+    color: $white;
+    box-shadow: inset 0 0 0 1px $turquoise;
+    
+    .c-icon {
+      margin-right: 0;
+      background-color: $turquoise;
+    }
+    
+    &:hover {
+      background-color: darken($turquoise, 10%);
+      box-shadow: inset 0 0 0 1px darker($turquoise, 10%);
+      .c-icon {
+        background-color: darken($turquoise, 10%);
+      }
+    }
+  }
+
+  &.c-btn--info {
+    background-color: $blue--base;
+    color: $white;
+    box-shadow: none;
+    
+    .c-icon {
+      margin-right: 0;
+      background-color: $blue--base;
+    }
+    
+    &:hover {
+      background-color: darken($blue--base, 10%);
+      .c-icon {
+        background-color: darken($blue--base, 10%);
+      }
+    }
+  }
+
+  &.c-btn--icon {
+    padding-left: 4px;
+    padding-right: 4px;
+
+    .c-icon {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
   }
 }

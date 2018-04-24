@@ -3,7 +3,7 @@
 
 //== Base
 $gutter: 10px;
-$border-radius: 2px;
+$border-radius: 4px;
 $img-path: "/img/";
 
 
@@ -18,29 +18,37 @@ $zindex-null: 0;
 
 
 //== Colors
-$black: #565655;
-$grey--darker: #A1A0A0;
-$grey--dark: #CECCC8;
-$grey: #E0DEDB;
-$grey--light: #EDECEA;
-$grey--lighter: #FAF9F8;
+$black: #52516E;
+$grey--darker: #85858F;
+$grey--dark: #c2c2c7;
+//$grey: #E0DEDB;
+$grey: #E8E5E1;
+$grey--light: #F2EFEB;
+$grey--lighter: #FAF9F7;
+$white: #FFFFFF;
 
+$blue--base: #2D2D67;
+$blue--light: #92D4E2;
+
+$red: #F64D56;
+$orange: #FF8161;
+$yellow: #FFCB45;
+$turquoise: #7BCBC2;
 $green: #5CB985;
-$orange: #FFA988;
-$yellow: #FFCC66;
+$brown: #977B5A;
 
 //== Global variables
 $body-bkg: $grey--lighter;
 
-$header--bkg: $brand;
+$header--bkg: $white;
 $header--height: 70px;
 $header--bkg--give: $brand;
 
 $form-element--bdr: $grey;
 $form-element--bdr--hover: $grey--dark;
 $form-element--bdr--focus: $grey--darker;
-$form-element--height: 40px;
-$form-element--height--textarea: 100px;
+$form-element--height: 36px;
+$form-element--height--textarea: 72px;
 
 $btn--bdr: $form-element--bdr;
 $btn--bdr--hover: $form-element--bdr--hover;
@@ -51,11 +59,10 @@ $sort-toggle--bkg--active: $grey--dark;
 $sort-toggle--clr: $grey--darker;
 $sort-toggle--clr--active: $black;
 
-$icon--size: 26px;
-$icon--size--slack: 18px;
+$icon--size: 28px;
 $icon--bkg: $grey;
-$icon--bkg--pos: $green;
-$icon--bkg--neg: $orange;
+$icon--bkg--pos: $turquoise;
+$icon--bkg--neg: $red;
 
 $line--bdr: $grey--light;
 $line-title--height: 44px;
@@ -65,7 +72,7 @@ $line-transaction--bkg--neg: rgba($orange, 0.5);
 $line-transaction-count--bkg--pos: $green;
 $line-transaction-count--bkg--neg: $orange;
 
-$tag--bkg: $grey;
+$tag--bkg: $grey--dark;
 $tag--bkg--pos: $green;
 $tag--bkg--neg: $orange;
 $tag--height: 20px;
