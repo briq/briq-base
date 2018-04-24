@@ -41,7 +41,7 @@
   position: relative;
   top: 8px;
   @include avatar(32px, $border-radius);
-  @include font-pixel(26px, 600);
+  @include font(26px, 600);
 
 
   //== Children

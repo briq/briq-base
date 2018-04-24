@@ -26,7 +26,7 @@
       color: $black;
       position: relative;
       top: 3px;
-      @include font-pixel(20px);
+      @include font(20px);
     }
   }
   .l-lines & { margin-bottom: -2px }
@@ -84,7 +84,7 @@
 .l-line__inline-count {
   color: $grey--darker;
   margin-top: 5px;
-  @include font-pixel(18px);
+  @include font(18px);
 
   //== Children
   span {
@@ -177,7 +177,7 @@
   text-align: center;
   position: relative;
   @include avatar($line-transaction-avatar--size, $border-radius);
-  @include font-pixel(22px);
+  @include font(22px);
 
   //== Variants
   .l-line__transaction--pos & {

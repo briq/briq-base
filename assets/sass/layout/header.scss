@@ -3,16 +3,18 @@
 
 
 .l-header {
-  background-color: $header--bkg;
-  flex: 0 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: $header--height;
+  padding: 0 $gutter*2;
 
-  //== Children
-  .l-wrap {
-    align-items: center;
-    display: flex;
-    height: 100%;
-  }
+  display: flex;
+  align-items: center;
+  
+  background-color: $header--bkg;
+  box-shadow: 0 2px 2px rgba($grey--dark, 0.2);
 }
 
 .l-header__btn {
@@ -20,69 +22,58 @@
   border-radius: $border-radius;
   display: flex;
 
-  height: ($header--height - ($gutter * 3));
-  line-height: ($header--height - ($gutter * 3)) + 6px;
+  height: $btn--height;
+  line-height: $btn--height;
 
   margin-right: ($gutter * 1.5);
   padding: 0 $gutter;
 
-  @include font-pixel(20px);
-  color: #fff;
-  text-shadow: 0 2px 0 darken($header--bkg, 10%);
+  @include font(14px, 500);
 
+  background-color: $white;
+  color: $blue--base;
+  
   &:hover {
-    background-color: darken($header--bkg, 10%);
-    text-shadow: 0 2px 0 darken($header--bkg, 20%);
+    background-color: $grey--light;
   }
-
-  &.active {
-    background-color: darken($header--bkg, 20%);
-    text-shadow: 0 2px 0 darken($header--bkg, 25%);
-  }
-}
-
-.l-header__balance {
-  display: inline-block;
-  padding: 0 $gutter 0 $gutter * 4;
-  margin-left: $gutter;
-  border-radius: 0 $border-radius $border-radius 0;
-}
-
-.l-header__btn--user {
-  padding: 0;
-  margin-right: 0;
-  background-color: darken($header--bkg, 10%);
-
-  &:hover { background-color: darken($header--bkg, 15%) }
 
   img {
-    margin: 3px $gutter 3px 3px;
-    @include avatar(34px, $border-radius);
-  }
-
-  .l-header__balance {
-    background: darken($header--bkg, 20%) url(#{$img-path}icons/icon--coin-received.svg) $gutter center no-repeat;
-  }
-}
-
-.l-header__btn--give {
-  padding-right: 0;
-  background-color: $header--bkg--give;
-  text-shadow: 0 2px 0 darken($header--bkg--give, 10%);
-  margin-right: 0;
-  margin-left: ($gutter * 1.5);
-
-  &:hover { 
-    background-color: darken($header--bkg--give, 5%);
-    text-shadow: 0 2px 0 darken($header--bkg--give, 20%)
-  }
-
-  .l-header__balance {
-    background: darken($header--bkg--give, 15%) url(#{$img-path}icons/icon--coin-give.svg) $gutter center no-repeat;
+    margin: 0;
+    @include avatar($btn--height, $border-radius);
+    position: relative;
+    left: -$gutter;
   }
 }
 
 .l-header__nav {
   display: flex;
   flex: 1 1 auto;
+  border-left: solid 2px $grey--light;
+  line-height: 32px;
+  
+  a {
+    display: block;
+    line-height: 32px;
+    height: 32px;
+    padding: 0 $gutter*2; 
+    color: $grey--darker;
+    @include font(14px, 500);
+    border-right: solid 2px $grey--light;
+    position: relative;
+
+    &.active  {
+      color: $blue--base;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: $yellow;
+        height: 4px;
+        border-radius: $border-radius $border-radius 0 0;
+        left: -4px;
+        right: -4px;
+        bottom: -19px;
+      }
+    }
+  }
 }
