@@ -9,8 +9,11 @@
   height: 36px;
   width: 36px;
   border-radius: $border-radius;
-
+  
   //== Variants
   &.c-logo--header { margin-right: ($gutter * 2) }
-  &.c-logo--auth { margin-bottom: ($gutter * 8) }
+  &.c-logo--big { 
+    height: 120px;
+    width: 120px;
+  }
 }

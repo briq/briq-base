@@ -4,141 +4,31 @@
 
 .l-auth {
   background-color: $auth--bkg;
-  background-image: url(#{$img-path}illustrations/illustration--briqs.svg);
   display: flex;
-  @include coverer();
+  height: 100%;
 }
-.l-auth__content {
+
+.l-auth__text {
   display: flex;
-  flex: 0 0 50%;
   flex-direction: column;
-  padding: ($gutter * 4) ($gutter * 8);
-  @include scrolling();
-
-  //== Children
-  small {
-    color: $auth-txt--clr;
-    flex: 0 0 auto;
-    margin-top: ($gutter * 4);
-    @include font(11px);
-  }
-  small a {
-    color: $auth-txt--clr;
-    line-height: 1.5em;
-    text-decoration: underline;
-    @include font(11px, 600);
-  }
-}
-.l-auth__txt {
-  display: flex;
-  flex: 1 1 auto;
-
-  //== Children
-  div {
-    margin: auto 0;
-    @include clearfix();
-  }
-  h1 {
-    color: #fff;
-    margin-bottom: $gutter*2;
-    @include font(32px, 600);
-  }
-  p {
-    color: $auth-txt--clr;
-    line-height: 1.6em;
-    @include font(16px, 600);
-  }
-}
-.l-auth__pic {
-  background-color: $auth--bkg--pic;
-  background-image: url(#{$img-path}illustrations/illustration--auth@2x.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 391px auto;
   flex: 0 0 50%;
-}
-.l-auth__wrap {
-  display: flex;
-  flex: 1 1 auto;
-}
-.l-auth__access {
-  background-color: #fff;
-  border-radius: $border-radius;
-  margin: auto;
-  padding: ($gutter * 4) 0 ($gutter * 1.5);
-  max-width: 600px;
+  padding: ($gutter * 8);
 
-  //== Children
   h1 {
-    color: $black;
-    margin: 0 ($gutter * 4);
-    text-align: center;
-    @include font(24px, 400);
-  }
-  h2 {
-    color: $grey--dark;
-    margin: $gutter*2 ($gutter * 4) ($gutter * 4);
-    text-align: center;
-    @include font(14px, 600);
+    color: $blue--base;
+    @include font(32px, 600);
+    margin-top: $gutter * 8;
+    margin-bottom: $gutter * 4;
   }
 }
-.l-auth__switch {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto ($gutter * 4);
-  width: 280px;
 
-  //== Children
-  span {
-    background-image: url(#{$img-path}icons/icon--arrows.png);
-    background-size: cover;
-    height: 50px;
-    flex: 0 0 auto;
-    width: 34px;
-  }
-  img {
-    background-color: #fff;
-    border: 2px solid $grey;
-    box-shadow: 0 5px 0 rgba($grey, 0.2);
-    flex: 0 0 auto;
-    padding: 4px;
-    @include avatar(100px, $border-radius);
-  }
+.l-auth__picture {
+  background-image: url(#{$img-path}/illustrations/illustration--home-heading@2x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 50%;
 }
-.l-auth__config {
-  align-items: center;
-  display: flex;
-  padding: ($gutter * 1.5) ($gutter * 4);
-
-  //== Children
-  img {
-    flex: 0 0 auto;
-    margin-right: ($gutter * 2);
-    @include avatar(45px, $border-radius);
-  }
-  div {
-    flex: 1 1 auto;
-  }
-  strong {
-    color: $black;
-    display: block;
-    margin-bottom: 4px;
-    @include font(16px, 600);
-  }
-  small {
-    color: $grey--dark;
-    display: block;
-    text-transform: uppercase;
-    @include font(10px, 600);
-  }
-  .c-btn {
-    flex: 0 0 auto;
-    margin-left: ($gutter * 2);
-  }
-
-  //== Variants
-  & + .l-auth__config { border-top: 2px solid $grey--light }
-}
-
-
