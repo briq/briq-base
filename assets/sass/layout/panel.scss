@@ -26,6 +26,7 @@
 
   .l-panel__title {
     @include font(15px, 500);
+    line-height: 36px;
     color: $black;
   }
 }
