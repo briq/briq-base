@@ -14,6 +14,7 @@
   padding: ($gutter * 4) ($gutter * 8);
   position: relative;
   z-index: $zindex-medium;
+  border-radius: $border-radius;
 
   //== Children
   h1,
@@ -32,12 +33,16 @@
 }
 .c-modal__btns {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: ($gutter * 4);
 
   //== Children
-  .c-btn + .c-btn { margin-left: ($gutter * 1.5) }
+  .c-btn { 
+    margin-left: $gutter;
+    margin-right: $gutter;
+  }
 }
+
 .c-modal__overlay {
   background-color: $modal--overlay;
   z-index: $zindex-small;
