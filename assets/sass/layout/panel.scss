@@ -29,4 +29,8 @@
     line-height: 36px;
     color: $black;
   }
+  
+  .l-panel__subtitle {
+    @include font(13px);
+  }
 }
