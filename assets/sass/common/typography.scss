@@ -19,3 +19,107 @@ h1, h2, h3 {
 h2 {
   @include font(24px, 500);
 }
+
+
+//== Sizes
+$tiny: 11px;
+$small: 13px;
+$base: 14px;
+$medium: 17px;
+$large: 20px;
+$huge: 38px;
+$xtra: 56px;
+// $varName: {value};
+
+$sizes: (
+  tiny: $tiny,
+  small: $small,
+  base: $base,
+  medium: $medium,
+  large: $large,
+  huge: $huge,
+  xtra: $xtra,
+);
+
+.t-fs {
+  @each $key, $val in $sizes {
+    &--#{$key} { font-size: $val }
+  }
+}
+
+
+//== Colors
+//== Use variables defined within common/variables.scss
+$colors: (
+  primary-1: $primary-1,
+  primary-2: $primary-2,
+  secondary-1: $secondary-1,
+  secondary-2: $secondary-2,
+  secondary-3: $secondary-3,
+  secondary-4: $secondary-4,
+  highlight-1: $highlight-1,
+  highlight-2: $highlight-2,
+  black: $black,
+  grey--darker: $grey--darker,
+  grey--dark: $grey--dark,
+  grey: $grey,
+  grey--light: $grey--light,
+  grey--lighter: $grey--lighter,
+  blue--base: $blue--base,
+  blue--light: $blue--light,
+  red: $red,
+  orange: $orange,
+  yellow$yellow,
+  turquoise: $turquoise,
+  green: $green,
+  brown: $brown,
+  white: #fff,
+  white-transparent: rgba(#fff, 0.8),
+  black--real: #000
+);
+
+.t-cl {
+  @each $key, $val in $colors {
+    &--#{$key},
+    &--#{$key}--hover:hover,
+    &--#{$key}--active.active { color: $val }
+  }
+}
+
+
+//== Weights
+$weights: (
+  light: 200,
+  base: 400,
+  medium: 500,
+  bold: 700,
+);
+
+.t-fw {
+  @each $key, $val in $weights {
+    &--#{$key} { font-weight: $val }
+  }
+}
+
+
+
+//== Line-heights
+$heights: (
+  small: 1em,
+  base: 1.3em,
+  medium: 1.4em,
+  large: 1.6em,
+  huge: 1.8em,
+);
+
+.t-ln {
+  @each $key, $val in $heights {
+    &--#{$key} { line-height: $val }
+  }
+}
+
+
+//== Utils
+.t--caps { text-transform: uppercase }
+.t--underline,
+.t--underline--hover:hover { text-decoration: underline }

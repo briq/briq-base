@@ -8,7 +8,6 @@
   border: none;
   border-radius: $border-radius;
   box-shadow: inset 0 0 0 1px $btn--bdr;
-  color: $grey--darker;
   cursor: pointer;
   display: flex;
   height: $btn--height;
@@ -16,7 +15,6 @@
   outline: none;
   padding: 0 ($gutter * 1.2);
   text-align: center;
-  @include font(12px, 600);
   
   //== Children
   p { color: $grey--darker }
@@ -42,20 +40,20 @@
   }
 
   &.c-btn--primary {
-    background-color: $turquoise;
+    background-color: $highlight-1;
     color: $white;
-    box-shadow: inset 0 0 0 1px $turquoise;
+    box-shadow: inset 0 0 0 1px $highlight-1;
     
     .c-icon {
       margin-right: 0;
-      background-color: $turquoise;
+      background-color: $highlight-1;
     }
     
     &:hover {
-      background-color: darken($turquoise, 10%);
-      box-shadow: inset 0 0 0 1px darker($turquoise, 10%);
+      background-color: $highlight-2;
+      box-shadow: inset 0 0 0 1px $highlight-2;
       .c-icon {
-        background-color: darken($turquoise, 10%);
+        background-color: $highlight-2;
       }
     }
   }

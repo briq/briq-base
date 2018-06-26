@@ -10,12 +10,8 @@
   height: $header--height;
   padding: 0 $gutter*2;
   z-index: $zindex-large;
-
   display: flex;
   align-items: center;
-  
-  background-color: $header--bkg;
-  box-shadow: 0 2px 2px rgba($grey--dark, 0.2);
 }
 
 .l-header__btn {
@@ -43,38 +39,5 @@
     @include avatar($btn--height, $border-radius);
     position: relative;
     left: -$gutter;
-  }
-}
-
-.l-header__nav {
-  display: flex;
-  flex: 1 1 auto;
-  border-left: solid 2px $grey--light;
-  line-height: 32px;
-  
-  a {
-    display: block;
-    line-height: 32px;
-    height: 32px;
-    padding: 0 $gutter*2; 
-    color: $grey--darker;
-    @include font(14px, 500);
-    border-right: solid 2px $grey--light;
-    position: relative;
-
-    &.active  {
-      color: $blue--base;
-
-      &::after {
-        content: '';
-        position: absolute;
-        background: $yellow;
-        height: 4px;
-        border-radius: $border-radius $border-radius 0 0;
-        left: -4px;
-        right: -4px;
-        bottom: -19px;
-      }
-    }
   }
 }

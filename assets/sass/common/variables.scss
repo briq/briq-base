@@ -17,11 +17,30 @@ $zindex-small: 1;
 $zindex-null: 0;
 
 
+
+//== Responsive
+$breakpoint-xs: 500px;
+$breakpoint-sm: 700px;
+$breakpoint-md: 900px;
+
+
+
 //== Colors
+$primary-1: #333333;
+$primary-2: #565655;
+
+$secondary-1: #FFCC66;
+$secondary-2: #FAB546;
+$secondary-3: darken(#FFCC66, 30%);
+$secondary-4: darken(#FFCC66, 50%);
+
+$highlight-1: #5CB984;
+$highlight-2: #45AB71;
+
+
 $black: #52516E;
 $grey--darker: #85858F;
 $grey--dark: #c2c2c7;
-//$grey: #E0DEDB;
 $grey: #E8E5E1;
 $grey--light: #F2EFEB;
 $grey--lighter: #FAF9F7;
@@ -36,6 +55,8 @@ $yellow: #FFCB45;
 $turquoise: #7BCBC2;
 $green: #5CB985;
 $brown: #977B5A;
+
+$brand: $orange;
 
 //== Global variables
 $body-bkg: $grey--lighter;
