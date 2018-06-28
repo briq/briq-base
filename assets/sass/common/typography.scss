@@ -1,13 +1,31 @@
+//== Grilli Type Eesti import
+$fonts-list: gt-eesti-medium, gt-eesti-regular, gt-eesti-regular-italic;
+
+@each $current-font in $fonts-list {
+  @font-face {
+    font-family: $current-font;
+    src:  url(#{$font-path}#{$current-font}.eot);
+    src:  url(#{$font-path}#{$current-font}.eot?#iefix) format('embedded-opentype'),
+          url(#{$font-path}#{$current-font}.woff) format('woff'),
+          url(#{$font-path}#{$current-font}.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+$fw-regular: "gt-eesti-regular", Helvetica, Arial, sans-serif;
+$fw-medium: "gt-eesti-medium", Helvetica, Arial, sans-serif;
+
+
 //== Mixins usage
 @mixin font($size, $weight: normal){
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $fw-regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $size;
-  font-weight: $weight;
+  font-weight: normal;
 }
 
 //== Basic
 body { 
-  @include font(14px); 
+  @include font(13px); 
   color: $black;
 }
 a { cursor: pointer }
@@ -22,9 +40,9 @@ h2 {
 
 
 //== Sizes
-$tiny: 11px;
+$tiny: 12px;
 $small: 13px;
-$base: 14px;
+$base: 15px;
 $medium: 17px;
 $large: 20px;
 $huge: 38px;
@@ -88,19 +106,26 @@ $colors: (
 
 
 //== Weights
-$weights: (
-  light: 200,
-  base: 400,
-  medium: 500,
-  bold: 700,
-);
+// $weights: (
+//   light: 200,
+//   base: 400,
+//   medium: 500,
+//   bold: 700,
+// );
 
-.t-fw {
-  @each $key, $val in $weights {
-    &--#{$key} { font-weight: $val }
-  }
+// .t-fw {
+//   @each $key, $val in $weights {
+//     &--#{$key} { font-weight: $val }
+//   }
+// }
+.t-fw--base { font-family: $fw-regular }
+.t-fw--medium,
+.t-fw--bold,
+.t-fw--medium--active.active,
+.t-fw--bold--active.active {
+  font-family: $fw-medium;
+  font-weight: normal;
 }
-
 
 
 //== Line-heights

@@ -131,7 +131,8 @@ $colors: (
   green: $green,
   brown: $brown,
   white: #fff,
-  black--real: #000
+  black--real: #000,
+  black--real--transparent: rgba(#000, 0.1)
 );
 
 .l-bkg {
@@ -160,6 +161,9 @@ $colors: (
 .l-shadow {
   box-shadow: 0 2px 5px rgba($primary-1, 0.1),
               0 0 0 2px rgba($primary-1, 0.05);
+}
+.l-shadow--small {
+  box-shadow: 0 0px 5px rgba($primary-1, 0.1);
 }
 
 

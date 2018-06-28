@@ -15,29 +15,120 @@
 }
 
 .l-header__btn {
-  position: relative;
-  border-radius: $border-radius;
-  display: flex;
+  height: 34px;
+  line-height: 34px;
+}
 
-  height: $btn--height;
-  line-height: $btn--height;
 
-  margin-right: ($gutter * 1.5);
-  padding: 0 $gutter;
+.l-header__nav {
+  height: 100%;
+  overflow: hidden;
 
-  @include font(14px, 500);
+  //== Children
+  a {
+    border-left: 2px solid $grey--light;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+  }
+  a:after {
+    border-radius: $border-radius $border-radius 0 0;
+    bottom: -22px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transition: all 250ms ease-out;
+  }
+  a.active:after {
+    background-color: $secondary-1;
+    bottom: -20px;
+  }
+}
 
-  background-color: $white;
-  color: $blue--base;
-  
-  &:hover {
-    background-color: $grey--light;
+
+@media only screen and (min-width:$breakpoint-sm) and (max-width:$breakpoint-md) {
+  .l-header {
+    align-items: flex-start;
+    bottom: 0;
+    height: auto;
+    padding: ($gutter*2);
+    right: auto;
+    width: 200px;
+  }
+  .l-header__wrapper {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+  }
+}
+@media only screen and (max-width:$breakpoint-md){
+  .l-header,
+  .l-header__wrapper,
+  .l-header__nav { flex-direction: column }
+  .l-header__nav {
+    height: auto;
+    margin: ($gutter * 2) 0;
+    padding: 0 ($gutter * 2);
+    @include scrolling();
+
+    //== Children
+    li { width: 100% }
+    a {
+      border-left: none;
+      padding: 0;
+    }
+    a.active:after {
+      border-radius: $border-radius 0 0 $border-radius;
+      bottom: auto;
+      height: 100%;
+      left: auto;
+      right: -20px;
+      width: 2px;
+    }
+  }
+  .l-header__received,
+  .l-header__give {
+    margin: 0 ($gutter * 2);
+  }
+  .l-header__give {
+    margin-top: ($gutter * 2);
   }
 
-  img {
-    margin: 0;
-    @include avatar($btn--height, $border-radius);
-    position: relative;
-    left: -$gutter;
+}
+
+@media only screen and (max-width:$breakpoint-sm){
+  .l-header__wrapper {
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    padding-bottom: ($gutter * 2);
+    position: fixed;
+    transform: translate3d(-100%, 0, 0);
+    transition: all 250ms ease-out;
+    top: 71px;
+    right: 0;
+  }
+  .l-header.active .l-header__wrapper {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+  .l-header__nav a {
+    height: auto;
+    line-height: 1.1em;
+    padding-bottom: $gutter;
+    padding-top: $gutter;
+  }
+  .l-header__mobile {
+    background-image: url(#{$img-path}icon--mobile-menu.svg);
+    cursor: pointer;
+    height: 24px;
+    left: ($gutter * 2);
+    margin-top: -12px;
+    position: absolute;
+    top: 50%;
+    width: 24px;
   }
 }

@@ -4,7 +4,8 @@
 //== Base
 $gutter: 10px;
 $border-radius: 4px;
-$img-path: "/img/";
+$img-path: "../img/";
+$font-path: "../fonts/";
 
 
 //== Z-indexes
@@ -29,10 +30,10 @@ $breakpoint-md: 900px;
 $primary-1: #333333;
 $primary-2: #565655;
 
-$secondary-1: #FFCC66;
+$secondary-1: #FFCA52;
 $secondary-2: #FAB546;
-$secondary-3: darken(#FFCC66, 30%);
-$secondary-4: darken(#FFCC66, 50%);
+$secondary-3: darken(#FFCA52, 30%);
+$secondary-4: darken(#FFCA52, 50%);
 
 $highlight-1: #5CB984;
 $highlight-2: #45AB71;
@@ -49,7 +50,7 @@ $white: #FFFFFF;
 $blue--base: #2D2D67;
 $blue--light: #92D4E2;
 
-$red: #F64D56;
+$red: #F34F5A;
 $orange: #FF8161;
 $yellow: #FFCB45;
 $turquoise: #7BCBC2;
