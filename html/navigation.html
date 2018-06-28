@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic meta -->
+  <meta charset="UTF-8">
+  <title>Briq</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../public/img/favicon@2x.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="../public/css/main.css" />
+</head>
+<body>
+
+
+  <div class="l-header l-bkg--white l-shadow--small u-fb u-va">
+    <span class="l-header__mobile js-toggle-nav"></span>
+    <a class="u-nfg" href="#"><img class="u-db" height="34" src="../public/img/logo.svg"></a>
+
+    <div class="l-header__wrapper u-fb u-fg">
+      <ul class="l-header__nav u-fg u-fb u-ac l-dpl">
+        <li><a class="t-fs--base t-fw--base t-fw--medium--active t-cl--grey--darker t-cl--blue--base--hover t-cl--blue--base--active l-dpl l-dpr active">Home</a></li>
+        <li><a class="t-fs--base t-fw--base t-fw--medium--active t-cl--grey--darker t-cl--blue--base--hover t-cl--blue--base--active l-dpl l-dpr">Overview</a></li>
+        <li><a class="t-fs--base t-fw--base t-fw--medium--active t-cl--grey--darker t-cl--blue--base--hover t-cl--blue--base--active l-dpl l-dpr">Analyze</a></li>
+        <li><a class="t-fs--base t-fw--base t-fw--medium--active t-cl--grey--darker t-cl--blue--base--hover t-cl--blue--base--active l-dpl l-dpr">Manage</a></li>
+        <li><a class="t-fs--base t-fw--base t-fw--medium--active t-cl--grey--darker t-cl--blue--base--hover t-cl--blue--base--active l-dpl l-dpr">Preferences</a></li>
+      </ul>
+
+      <a class="l-header__received u-nfg u-fb u-ac" href="#">
+        <img class="l-br l-mr" height="34" src="https://fillmurray.com/34/34" />
+        <span>
+          <strong class="t-fs--base t-cl--blue--base t-fw--medium u-db">Didier</strong>
+          <span class="u-fb u-va">
+            <img class="l-hmr" height="16" src="../public/img/icon--coin-received.png" />
+            <span class="t-fs--tiny t-cl--grey--darker">1114bq</span>
+          </span>
+        </span>
+      </a>
+
+      <span class="u-nfg l-bkg--grey--light l-dml l-dmr hide-xs hide-sm hide-md" style="height: 34px;width:2px"></span>
+
+      <a class="l-header__give u-nfg l-header__btn l-bkg--red t-fs--small t-cl--white l-br u-fb" href="#">
+        <span class="t-fw--medium l-pl l-pr u-fg">Give Briqs</span>
+        <span class="l-bkg--black--real--transparent u-fb u-va l-pl l-pr">
+          <img class="l-hmr" height="16" src="../public/img/icon--coin-give.png" />
+          <span>13</span>
+        </span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="l-content"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="../public/js/public.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $('.js-toggle-nav').bind('click', function(e){
+      $('.l-header').toggleClass('active');
+    });
+  </script>
+</body>
+</html>
