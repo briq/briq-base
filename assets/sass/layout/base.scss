@@ -27,6 +27,9 @@ body {
   padding: ($header--height + $gutter * 4) 0 ($gutter * 4);
 }
 
+@media only screen and (min-width:$breakpoint-sm) and (max-width:$breakpoint-md) {
+  .l-content { padding: 40px 0 40px 200px }
+}
 
 
 .l-login__wrap {
@@ -143,7 +146,11 @@ $colors: (
     &--#{$key}--focus:focus { background-color: $val }
   }
 }
-.l-bdr {
+.l-bdr,
+.l-bdr--bottom,
+.l-bdr--left,
+.l-bdr--right,
+.l-bdr--top {
   @each $key, $val in $colors {
     &--#{$key},
     &--#{$key}--hover:hover,
@@ -157,6 +164,22 @@ $colors: (
 
   //== Variants
   &.l-bdr--double { border-width: 2px }
+}
+.l-bdr--bottom {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.l-bdr--left {
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+.l-bdr--right {
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+.l-bdr--top {
+  border-top-style: solid;
+  border-top-width: 1px;
 }
 .l-shadow {
   box-shadow: 0 2px 5px rgba($primary-1, 0.1),

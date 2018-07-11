@@ -1,0 +1,27 @@
+.c-tab {
+
+}
+.c-tabs__item {
+  height: 40px;
+  line-height: 40px;
+
+  &.active {
+    background-color: $highlight-1;
+    color: #fff;
+  }
+  span {
+    position: relative;
+  }
+  i {
+    background-color: $red;
+    color: #fff;
+    font-size: $tiny;
+    font-style: normal;
+    line-height: 18px;
+    position: absolute;
+    right: -22px;
+    text-align: center;
+    top: -6px;
+    @include avatar(18px);
+  }
+}
