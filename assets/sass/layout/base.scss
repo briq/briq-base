@@ -55,6 +55,18 @@ body {
   }
 }
 
+.l-apps {
+  margin: -40px 0 ($gutter * 6);
+
+  .l-wrap {
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+.l-apps__item {
+  flex: 0 0 110px;
+}
+
 
 //== Margins
 .l-ma { margin: $gutter; }
