@@ -66,6 +66,17 @@ body {
 .l-apps__item {
   flex: 0 0 110px;
 }
+.col--notifications {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 110px - (#{$gutter} * 4));
+
+  .c-tabs { flex: 0 0 auto }
+  .l-notifications {
+    flex: 1 1 auto;
+    @include scrolling();
+  }
+}
 
 
 //== Margins

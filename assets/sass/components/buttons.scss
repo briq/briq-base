@@ -86,3 +86,17 @@
     }
   }
 }
+
+
+.c-btn__count {
+  background-color: rgba(#000, 0.05);
+  border-radius: 0 $border-radius $border-radius 0;
+  display: inline-block;
+  height: $btn--height;
+  line-height: $btn--height;
+  margin: 0 (-$gutter * 1.2) 0 ($gutter * 1.2);
+  width: $btn--height;
+
+  //== Variants
+  .c-btn--primary & { background-color: rgba(#000, 0.1) }
+}
