@@ -49,6 +49,36 @@
 }
 
 
+.l-header__switcher {
+  cursor: pointer;
+  min-width: 140px;
+  position: relative;
+}
+.l-header__swticher__caret {
+  background-color: $grey--dark;
+  height: 14px;
+  mask: url(#{$img-path}caret-mask.svg);
+  width: 14px;
+
+  //== States
+  .l-header__switcher:hover & { background-color: $highlight-1 }
+}
+.l-header__switch {
+  display: none;
+  left: -$gutter;
+  max-height: 360px;
+  position: absolute;
+  right: $gutter;
+  top: -$gutter;
+  width: 240px;
+  z-index: 2;
+  @include scrolling();
+
+  //== States
+  &.active { display: block }
+}
+
+
 @media only screen and (min-width:$breakpoint-sm) and (max-width:$breakpoint-md) {
   .l-header {
     align-items: flex-start;
