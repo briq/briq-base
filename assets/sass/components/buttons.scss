@@ -3,18 +3,23 @@
 
 
 .c-btn {
+  display: flex;
   align-items: center;
+  text-align: center;
+  
+  height: $btn--height;
+  line-height: $btn--height;
+  padding: 0 ($gutter * 1.2);
+
   background-color: $white;
+  color: $black;
+
   border: none;
   border-radius: $border-radius;
   box-shadow: inset 0 0 0 1px $btn--bdr;
+
   cursor: pointer;
-  display: flex;
-  height: $btn--height;
-  line-height: $btn--height;
   outline: none;
-  padding: 0 ($gutter * 1.2);
-  text-align: center;
   
   //== Children
   p { color: $grey--darker }
