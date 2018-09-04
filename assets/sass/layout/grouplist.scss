@@ -1,0 +1,36 @@
+.l-grouplist {}
+.l-grouplist__item {
+  align-items: center;
+  border: 1px solid $grey--light;
+  padding: $gutter;
+
+  .c-btn {
+    opacity: 0;
+    transform: translate3d(15px, 0, 0);
+    transition: all 350ms ease-out;
+  }
+
+  //== Variants
+  & + .l-grouplist__item { border-top: none }
+  &:first-child { border-radius: $border-radius $border-radius 0 0 }
+  &:last-child { border-radius: 0 0 $border-radius $border-radius }
+  &:hover .c-btn {
+    opacity: 1;
+    transform: none;
+  }
+
+  &.l-grouplist__item--disabled {
+    background-color: $grey--lighter;
+    cursor: not-allowed;
+  }
+}
+
+.l-grouplist__briq {
+  height: 30px;
+  opacity: 0.6;
+  transition: all 250ms ease-out;
+  width: 30px;
+
+  //== States
+  .l-grouplist__item:hover & { opacity: 1 }
+}

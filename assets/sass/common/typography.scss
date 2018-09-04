@@ -7,7 +7,7 @@
 
 //== Basic
 body { 
-  @include font(14px); 
+  @include font(14px);
   color: $black;
 }
 a { cursor: pointer }
@@ -19,3 +19,71 @@ h1, h2, h3 {
 h2 {
   @include font(24px, 500);
 }
+
+//== Colors
+//== Use variables defined within common/variables.scss
+$colors: (
+  primary-1: $primary-1,
+  primary-2: $primary-2,
+  secondary-1: $secondary-1,
+  secondary-2: $secondary-2,
+  secondary-3: $secondary-3,
+  secondary-4: $secondary-4,
+  highlight-1: $highlight-1,
+  highlight-2: $highlight-2,
+  black: $black,
+  grey--darker: $grey--darker,
+  grey--dark: $grey--dark,
+  grey: $grey,
+  grey--light: $grey--light,
+  grey--lighter: $grey--lighter,
+  blue--base: $blue--base,
+  blue--light: $blue--light,
+  red: $red,
+  orange: $orange,
+  yellow:$yellow,
+  turquoise: $turquoise,
+  green: $green,
+  brown: $brown,
+  white: #fff,
+  white-transparent: rgba(#fff, 0.8),
+  black--real: #000
+);
+
+.t-cl {
+  @each $key, $val in $colors {
+    &--#{$key},
+    &--#{$key}--hover:hover,
+    &--#{$key}--active.active { color: $val }
+  }
+}
+
+.t-ln--large { line-height: 1.6em; }
+.t-ln--small { line-height: 1em; }
+.t-ln--base { line-height: 1.3em; }
+
+
+
+//== Font weights
+$fw-regular: "gt-eesti-regular", Helvetica, Arial, sans-serif;
+$fw-medium: "gt-eesti-medium", Helvetica, Arial, sans-serif;
+.t-fw--base { font-family: $fw-regular }
+.t-fw--medium,
+.t-fw--bold,
+.t-fw--medium--active.active,
+.t-fw--bold--active.active {
+  font-family: $fw-medium;
+  font-weight: normal;
+}
+
+.t-fs--large { font-size: 20px; }
+.t-fs--base { font-size: 15px; }
+.t-fs--small { font-size: 13px; }
+.t-fs--tiny { font-size: 12px; }
+
+
+//== Utils
+.t--caps { text-transform: uppercase }
+.t--underline,
+.t--underline--hover:hover { text-decoration: underline }
+.t--italic  { font-style: italic }

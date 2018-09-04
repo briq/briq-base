@@ -18,6 +18,18 @@ $zindex-null: 0;
 
 
 //== Colors
+$primary-1: #333333;
+$primary-2: #565655;
+
+$secondary-1: #FFCA52;
+$secondary-2: #FAB546;
+$secondary-3: darken(#FFCA52, 30%);
+$secondary-4: darken(#FFCA52, 50%);
+
+$highlight-1: #5CB984;
+$highlight-2: #45AB71;
+
+//== Colors
 $black: #52516E;
 $grey--darker: #85858F;
 $grey--dark: #c2c2c7;
@@ -66,7 +78,7 @@ $icon--bkg--neg: $red;
 
 $line--bdr: $grey--light;
 $line-title--height: 44px;
-$line-transaction-avatar--size: 60px;
+$line-transaction-avatar--size: 40px;
 $line-transaction--bkg--pos: rgba($green, 0.5);
 $line-transaction--bkg--neg: rgba($orange, 0.5);
 $line-transaction-count--bkg--pos: $green;
@@ -88,3 +100,7 @@ $modal--bdr: $grey;
 $modal-title--clr: $black;
 $modal-txt--clr: $grey--darker;
 
+//== Responsive
+$breakpoint-xs: 500px;
+$breakpoint-sm: 700px;
+$breakpoint-md: 900px;

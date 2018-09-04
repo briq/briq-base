@@ -16,8 +16,63 @@ body {
   max-width: 1080px;
 }
 
+@media only screen and (max-width:$breakpoint-sm) {
+  .l-wrap {
+    width: 100%;
+    padding-left: 2*$gutter;
+    padding-right: 2*$gutter;
+  }
+}
+
 .l-content {
   padding: ($header--height + $gutter * 4) 0 ($gutter * 4);
+}
+
+@media only screen and (min-width:$breakpoint-sm) and (max-width:$breakpoint-md) {
+  .l-content { padding: 40px 0 40px 200px }
+}
+
+
+.l-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 640px;
+}
+
+.l-login__wrap {
+  max-width: 460px;
+  width: calc(100% - (#{$gutter} * 4));
+}
+.l-separator {
+  min-height: 1px;
+  position: relative;
+
+  span {
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+  }
+  i {
+    font-style: normal;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+//== Title
+.l-title {
+  align-items: center;
+  display: flex;
+
+  //== Children
+  h1 {
+    color: $black;
+    flex: 1 1 auto;
+    @include font(16px, 600);
+  }
 }
 
 //== Margins
@@ -44,6 +99,7 @@ body {
 
 
 //== Paddings
+.l-dp--large { padding: ($gutter * 4) }
 .l-pa { padding: $gutter; }
 .l-pb { padding-bottom: $gutter; }
 .l-pl { padding-left: $gutter; }
@@ -64,3 +120,130 @@ body {
 .l-npl { padding-left: 0; }
 .l-npr { padding-right: 0; }
 .l-npt { padding-top: 0; }
+
+
+//== Various
+.l-br { border-radius: $border-radius }
+
+
+
+//== Backgrounds and borders
+//== Use variables defined within common/variables.scss
+$colors: (
+  primary-1: $primary-1,
+  primary-2: $primary-2,
+  secondary-1: $secondary-1,
+  secondary-2: $secondary-2,
+  secondary-3: $secondary-3,
+  secondary-4: $secondary-4,
+  highlight-1: $highlight-1,
+  highlight-2: $highlight-2,
+  black: $black,
+  grey--darker: $grey--darker,
+  grey--dark: $grey--dark,
+  grey: $grey,
+  grey--light: $grey--light,
+  grey--lighter: $grey--lighter,
+  blue--base: $blue--base,
+  blue--light: $blue--light,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  turquoise: $turquoise,
+  green: $green,
+  brown: $brown,
+  white: #fff,
+  black--real: #000,
+  black--real--transparent: rgba(#000, 0.1)
+);
+
+.l-bkg {
+  @each $key, $val in $colors {
+    &--#{$key},
+    &--#{$key}--hover:hover,
+    &--#{$key}--active.active,
+    &--#{$key}--focus:focus { background-color: $val }
+  }
+}
+
+.l-bdr,
+.l-bdr--bottom,
+.l-bdr--left,
+.l-bdr--right,
+.l-bdr--top {
+  @each $key, $val in $colors {
+    &--#{$key},
+    &--#{$key}--hover:hover,
+    &--#{$key}--active.active,
+    &--#{$key}--focus:focus { border-color: $val }
+  }
+}
+.l-bdr {
+  border-style: solid;
+  border-width: 1px;
+
+  //== Variants
+  &.l-bdr--double { border-width: 2px }
+}
+.l-bdr--bottom {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.l-bdr--left {
+  border-left-style: solid;
+  border-left-width: 1px;
+}
+.l-bdr--right {
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+.l-bdr--top {
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+.l-shadow {
+  box-shadow: 0 2px 5px rgba($primary-1, 0.1),
+              0 0 0 2px rgba($primary-1, 0.05);
+}
+.l-shadow--small {
+  box-shadow: 0 0px 5px rgba($primary-1, 0.1);
+}
+
+//== Responsive
+html body .show-md,
+html body .show-sm,
+html body .show-xs { display: none !important }
+html body .show-lg { display: block !important }
+
+@media only screen and (max-width:$breakpoint-md){
+  html body .hide-md,
+  html body .show-lg { display: none !important }
+  html body .show-md { display: block !important }
+}
+
+//== Responsive small
+@media only screen and (max-width:$breakpoint-sm){
+  html body .hide-sm,
+  html body .show-md,
+  html body .show-lg { display: none !important }
+  html body .show-sm { display: block !important }
+}
+
+//== Responsive extra-small
+@media only screen and (max-width:$breakpoint-xs){
+  html body .hide-xs,
+  html body .show-md,
+  html body .show-sm,
+  html body .show-lg { display: none !important }
+  html body .show-xs { display: block !important }
+  .u-tc--xs { text-align: center }
+  .l-wrapper {
+    border-radius: none;
+    box-shadow: none;
+    margin: -40px -5.5% (-$gutter * 4);
+    min-height: calc(100vh - #{$header--height});
+    padding: 0 !important;
+    width: 100vw;
+  }
+}
+
