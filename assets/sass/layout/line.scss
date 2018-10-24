@@ -43,6 +43,17 @@
       &:first-child { margin-left: 0; }
     }
   }
+  &.l-line--compact {
+    box-shadow: inset 0 0 0 1px #F2EFEB;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    &:first-child {
+      border-radius: $border-radius $border-radius 0px 0px;
+    }
+    &:last-child {
+      border-radius: 0px 0px $border-radius $border-radius;
+    }
+  }
 }
 
 .l-line--form {
