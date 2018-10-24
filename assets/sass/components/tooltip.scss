@@ -17,6 +17,7 @@
     transform: translate3d(-50%, 0, 0);
     transition: all 200ms ease-out;
     width: 120px;
+    z-index: 1000;
   }
   &:hover:after {
     top: 15px;
