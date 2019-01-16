@@ -30,6 +30,7 @@
     line-height: 28px;
     padding: 0 $gutter;
     @include font(13px, 600);
+    overflow: hidden;
   }
   a:hover {
     background-color: $grey--lighter;
